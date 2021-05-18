@@ -1,2 +1,32 @@
+/* ==================== Primary Colors ==================== */
+/* ==================== Secondary Colors ==================== */
+/* Main Font Family */
+/* Padding Increment */
+@font-face {
+  font-family: "Avenir Next LT Pro";
+  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("otf");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Avenir Next LT Pro";
+  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("otf");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Avenir Next LT Pro";
+  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("otf");
+  font-style: normal;
+  font-weight: 400;
+}
+/* ==================== Mobile Text Styles ==================== */
+/* ==================== Desktop & Tablet Text Styles ==================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
 
-/*# sourceMappingURL=main.css.map *//*# sourceMappingURL=main.css.map */
+html {
+  font-family: "Avenir Next LT Pro", sans-serif;
+}/*# sourceMappingURL=main.css.map */
