@@ -10,3 +10,255 @@
 html {
     font-family: $font-family;
 }
+
+/* =============== Navigation =============== */
+.header {
+    width: 100%;
+}
+
+.navbar {
+    width: 100%;
+    background: colors.$primary-black;
+    padding-top: $padding*3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        
+        &-item {
+            width: 50%;
+            text-align: center;
+            padding: $padding*2 $padding*4;
+            
+            &--active {
+                border-bottom: 4px solid colors.$primary-white;
+            }
+            
+            &:hover {
+                border-bottom: 4px solid colors.$primary-white;
+            }
+        }
+    }
+    
+    &__link {
+        @include subheader-mobile;
+        text-decoration: none;
+        color: colors.$secondary-grey;
+        font-weight: 400;
+
+        &--active {
+            color: colors.$primary-white;
+            font-weight: 700;
+        }
+
+        &:hover {
+            color: colors.$primary-white;
+        }
+    }
+}
+
+.logo {
+    @include logo-style;
+
+    &-link {
+        text-decoration: none;
+        color: colors.$primary-white;
+    }
+}
+
+/* =============== Main =============== */
+// .main {}
+
+/* =============== Hero =============== */
+    .hero {
+        background: url('../assets/images/hero-bio.jpg');
+        width: 100%;
+        height: 190px;
+        background-position: center;
+        background-size: cover;
+        padding: 0 $padding*2;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        &__title {
+            @include page-header-mobile;
+            color: colors.$primary-white;
+            z-index: 1;
+        }
+        
+        &__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: colors.$primary-black;
+            opacity: 0.5;
+            z-index: 0;
+        }
+    }
+
+/* =============== About =============== */
+.article {
+    width: 100%;
+    padding: 0 $padding*2;
+    background: colors.$primary-white;
+
+    &--bg {
+        background: colors.$secondary-white;
+    }
+
+    &__title {
+        @include section-header-mobile;
+        padding: $padding*3 0 $padding*2;
+    }
+
+    &__content {
+        width: 100%;
+    }
+
+    &__img {
+        width: 100%;
+        height: 30vh;
+        object-fit: cover;
+        object-position: bottom;
+    }
+
+}
+        
+.quote {
+    padding-top: $padding*2;
+
+    &__txt {
+        @include body-copy-mobile;
+        font-weight: 700;
+        padding-bottom: $padding;
+    }
+
+    &__author {
+        @include body-copy-mobile;
+        font-weight: 700;
+    }
+}
+        
+.info {
+
+    &__title {
+        @include subheader-mobile;
+        padding: $padding*3 0 $padding*2;
+    }
+
+    &__txt {
+        @include body-copy-mobile;
+        padding-bottom: $padding*2;
+    }
+}
+
+/* =============== Photo Gallery =============== */
+
+.gallery {
+    width: 100%;
+
+    &__list {
+        list-style: none;
+        padding: 0;
+
+        &-item {
+            padding-bottom: $padding*2;
+        }
+
+        &-img {
+            width: 100%;
+            // position: absolute;
+            // left: 0;
+            // top: 0;
+            // width: 100%;
+            // height: auto;
+        }
+    }
+}
+
+/* =============== Footer =============== */
+.footer {
+    width: 100%;
+    background: colors.$primary-black;
+    color: colors.$primary-white;
+    padding: 0 $padding*2 $padding*2;
+    display: flex;
+    flex-direction: column;
+
+    &__container {
+        padding: $padding*3 0 $padding*2;
+    }
+}
+
+/* =============== Social Navigation =============== */
+.social {
+    padding-bottom: $padding*2;
+
+    &__title {
+        @include section-header-mobile;
+        padding: $padding*3 0 $padding*2;
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        width: 45%;
+        display: flex;
+        justify-content: space-between;
+
+        // &-item {}
+    }
+
+    // &__link {}
+
+    &__icon {
+        max-width: 25px;
+    }
+
+}
+
+/* =============== Contact Info =============== */
+.contact {
+    &__list {
+        @include footer-copy-mobile;
+        list-style: none;
+        padding: 0;
+        
+        &-item {
+            padding-bottom: $padding*3;
+        }
+    }
+
+    &__person {
+        font-weight: 600;
+        padding-bottom: $padding*2;
+
+        // &-name {}
+        // &-company {}
+    }
+    &__location {
+        padding-bottom: $padding*2;
+
+        // &-line1 {}
+        // &-line2 {}
+    }
+
+    // &__email {}
+}
+
+/* =============== Footer Logo / Wordmark =============== */
+//     .footer__logo
+
+/* =============== Copyright =============== */
+.copyright {
+    @include label-button-mobile;
+    font-weight: 400;
+}

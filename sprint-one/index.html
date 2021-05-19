@@ -12,15 +12,19 @@
     <!-- =============== Navigation =============== -->
     <header class="header">
         <nav class="navbar">
-            <h2 class="navbar__logo">
-                <a href="./index.html" class="navbar__logo-link">BandSite</a>
-            </h2>
+            <a href="./index.html" class="logo-link">
+                <h2 class="logo">BandSite</h2>
+            </a>
             <ul class="navbar__list">
-                <li class="navbar__list-item">
-                    <a href="./index.html" class="navbar__link">Biography</a>
+                <li class="navbar__list-item navbar__list-item--active">
+                    <a href="./index.html" class="navbar__link navbar__link--active">
+                        Biography
+                    </a>
                 </li>
                 <li class="navbar__list-item">
-                    <a href="#" class="navbar__link">Shows</a>
+                    <a href="#" class="navbar__link">
+                        Shows
+                    </a>
                 </li>
             </ul>
         </nav>
@@ -31,7 +35,7 @@
         <!-- =============== Hero =============== -->
         <article class="hero">
             <h1 class="hero__title">The Bees Knees</h1>
-            <img src="./assets/images/hero-bio.jpg" alt="bee on a flower" class="hero__img">
+            <div class="hero__overlay"></div>
         </article>
 
         <!-- =============== About =============== -->
@@ -52,7 +56,7 @@
         </article>
 
         <!-- =============== Photo Gallery =============== -->
-        <article class="article">
+        <article class="article article--bg">
             <h2 class="article__title">Photo Gallery</h2>
 
             <section class="gallery">
@@ -153,7 +157,9 @@
         </section>
 
         <!-- =============== Footer Logo / Wordmark =============== -->
-        <h3 class="footer__logo">BandSite</h3>
+        <section class="footer__container">
+            <h2 class="logo">BandSite</h2>
+        </section>
 
         <!-- =============== Copyright =============== -->
         <p class="copyright">Copyright The Bees Knees © 2021 All Rights Reserved</p>

@@ -20,6 +20,7 @@
   font-style: normal;
   font-weight: 400;
 }
+/* Logo */
 /* ==================== Mobile Text Styles ==================== */
 /* ==================== Desktop & Tablet Text Styles ==================== */
 * {
@@ -29,4 +30,227 @@
 
 html {
   font-family: "Avenir Next LT Pro", sans-serif;
+}
+
+/* =============== Navigation =============== */
+.header {
+  width: 100%;
+}
+
+.navbar {
+  width: 100%;
+  background: #323232;
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.navbar__list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  width: 100%;
+}
+.navbar__list-item {
+  width: 50%;
+  text-align: center;
+  padding: 16px 32px;
+}
+.navbar__list-item--active {
+  border-bottom: 4px solid #FFFFFF;
+}
+.navbar__list-item:hover {
+  border-bottom: 4px solid #FFFFFF;
+}
+.navbar__link {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #E1E1E1;
+  font-weight: 400;
+}
+.navbar__link--active {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+.navbar__link:hover {
+  color: #FFFFFF;
+}
+
+.logo {
+  max-height: 20px;
+  max-width: 120px;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.logo-link {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+/* =============== Main =============== */
+/* =============== Hero =============== */
+.hero {
+  background: url("../assets/images/hero-bio.jpg");
+  width: 100%;
+  height: 190px;
+  background-position: center;
+  background-size: cover;
+  padding: 0 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.hero__title {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  color: #FFFFFF;
+  z-index: 1;
+}
+.hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #323232;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+/* =============== About =============== */
+.article {
+  width: 100%;
+  padding: 0 16px;
+  background: #FFFFFF;
+}
+.article--bg {
+  background: #FAFAFA;
+}
+.article__title {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  padding: 24px 0 16px;
+}
+.article__content {
+  width: 100%;
+}
+.article__img {
+  width: 100%;
+  height: 30vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+
+.quote {
+  padding-top: 16px;
+}
+.quote__txt {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  font-weight: 700;
+  padding-bottom: 8px;
+}
+.quote__author {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  font-weight: 700;
+}
+
+.info__title {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+  padding: 24px 0 16px;
+}
+.info__txt {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  padding-bottom: 16px;
+}
+
+/* =============== Photo Gallery =============== */
+.gallery {
+  width: 100%;
+}
+.gallery__list {
+  list-style: none;
+  padding: 0;
+}
+.gallery__list-item {
+  padding-bottom: 16px;
+}
+.gallery__list-img {
+  width: 100%;
+}
+
+/* =============== Footer =============== */
+.footer {
+  width: 100%;
+  background: #323232;
+  color: #FFFFFF;
+  padding: 0 16px 16px;
+  display: flex;
+  flex-direction: column;
+}
+.footer__container {
+  padding: 24px 0 16px;
+}
+
+/* =============== Social Navigation =============== */
+.social {
+  padding-bottom: 16px;
+}
+.social__title {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  padding: 24px 0 16px;
+}
+.social__list {
+  list-style: none;
+  padding: 0;
+  width: 45%;
+  display: flex;
+  justify-content: space-between;
+}
+.social__icon {
+  max-width: 25px;
+}
+
+/* =============== Contact Info =============== */
+.contact__list {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  list-style: none;
+  padding: 0;
+}
+.contact__list-item {
+  padding-bottom: 24px;
+}
+.contact__person {
+  font-weight: 600;
+  padding-bottom: 16px;
+}
+.contact__location {
+  padding-bottom: 16px;
+}
+
+/* =============== Footer Logo / Wordmark =============== */
+/* =============== Copyright =============== */
+.copyright {
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 700;
+  font-weight: 400;
 }/*# sourceMappingURL=main.css.map */

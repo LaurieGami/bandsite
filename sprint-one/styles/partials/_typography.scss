@@ -21,6 +21,15 @@
     font-weight: 400;
 }
 
+/* Logo */
+@mixin logo-style {
+    max-height: 20px;
+    max-width: 120px;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
 /* ==================== Mobile Text Styles ==================== */
 
 // Mobile - Page Header
