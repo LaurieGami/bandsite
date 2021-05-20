@@ -28,15 +28,16 @@
   margin: 0;
 }
 
-html {
+body {
   font-family: "Avenir Next LT Pro", sans-serif;
 }
 
-/* =============== Navigation =============== */
+/* =============== Header =============== */
 .header {
   width: 100%;
 }
 
+/* =============== Navigation =============== */
 .navbar {
   width: 100%;
   background: #323232;
@@ -49,6 +50,26 @@ html {
   .navbar {
     flex-direction: row;
     padding: 0 36px;
+  }
+}
+.navbar__logo {
+  max-height: 20px;
+  max-width: 120px;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+.navbar__logo-link {
+  text-decoration: none;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .navbar__logo-link {
+    margin-right: 36px;
   }
 }
 .navbar__list {
@@ -99,26 +120,6 @@ html {
   border-bottom: 4px solid #FFFFFF;
 }
 
-.logo {
-  max-height: 20px;
-  max-width: 120px;
-  font-size: 20px;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-.logo-link {
-  text-decoration: none;
-  color: #FFFFFF;
-}
-@media (min-width: 768px) and (max-width: 1279px) {
-  .logo-link {
-    display: flex;
-    align-items: center;
-    margin-right: 36px;
-  }
-}
-
-/* =============== Main =============== */
 /* =============== Hero =============== */
 .hero {
   background: url("../assets/images/hero-bio.jpg");
@@ -134,7 +135,7 @@ html {
 @media (min-width: 768px) and (max-width: 1279px) {
   .hero {
     padding: 0 36px;
-    height: 70vh;
+    height: 50vh;
   }
 }
 .hero__title {
@@ -204,8 +205,10 @@ html {
 }
 .article__img {
   width: 100%;
+  display: flex;
 }
 
+/* =============== Quote =============== */
 .quote {
   padding-top: 16px;
 }
@@ -215,9 +218,8 @@ html {
   }
 }
 .quote__txt {
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
   font-weight: 600;
   padding-bottom: 8px;
 }
@@ -229,20 +231,11 @@ html {
   }
 }
 .quote__author {
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
   font-weight: 600;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
-  .quote__author {
-    font-size: 14px;
-    line-height: 22px;
-    font-weight: 400;
-    font-weight: 600;
-  }
-}
-
+/* =============== Info =============== */
 .info {
   display: flex;
   flex-direction: column;
@@ -293,6 +286,11 @@ html {
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .gallery {
+    padding-bottom: 12px;
+  }
+}
 .gallery__list {
   list-style: none;
   padding: 0;
@@ -315,7 +313,7 @@ html {
 @media (min-width: 768px) and (max-width: 1279px) {
   .gallery__list-item {
     padding-bottom: 24px;
-    width: 30%;
+    width: 31%;
     height: auto;
   }
 }
@@ -334,63 +332,89 @@ html {
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .footer {
+    padding: 48px 36px 36px 36px;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 48px 36px 36px 36px;
   }
 }
-.footer__container {
+.footer__title {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
   padding: 24px 0 16px;
+  display: flex;
+  align-items: center;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
-  .footer__container {
+  .footer__title {
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 700;
+    padding: 0;
+    order: -3;
+    width: 33%;
+    padding: 0 0 36px;
+  }
+}
+.footer__logo {
+  max-height: 20px;
+  max-width: 120px;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+.footer__logo-container {
+  padding: 24px 0 16px;
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .footer__logo-container {
     order: -1;
-    width: 30%;
-    display: flex;
+    width: 34%;
     justify-content: flex-end;
-    align-items: center;
-    padding: 0 0 36px 0;
+    padding: 0 0 36px;
   }
 }
 
 /* =============== Social Navigation =============== */
 .social {
   padding-bottom: 16px;
+  display: flex;
+  flex-direction: column;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .social {
     order: -2;
-    width: 70%;
+    padding: 0;
+    width: 33%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
     padding-bottom: 36px;
-  }
-}
-.social__title {
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: 700;
-  padding: 24px 0 16px;
-}
-@media (min-width: 768px) and (max-width: 1279px) {
-  .social__title {
-    padding: 0;
   }
 }
 .social__list {
   list-style: none;
   padding: 0;
-  width: 45%;
   display: flex;
-  justify-content: space-between;
+  align-items: flex-end;
+}
+.social__list-item {
+  padding-right: 32px;
+}
+.social__link {
+  display: flex;
 }
 .social__icon {
-  max-width: 25px;
+  max-height: 25px;
 }
 
 /* =============== Contact Info =============== */
 .contact {
+  display: flex;
   width: 100%;
 }
 .contact__list {
@@ -399,15 +423,26 @@ html {
   font-weight: 400;
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .contact__list {
-    order: 3;
-    display: flex;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    flex-direction: row;
   }
 }
 .contact__list-item {
   padding-bottom: 24px;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .contact__list-item {
+    padding-bottom: 48px;
+    width: 33%;
+  }
 }
 .contact__person {
   font-weight: 600;
@@ -417,18 +452,19 @@ html {
   padding-bottom: 16px;
 }
 
-/* =============== Footer Logo / Wordmark =============== */
 /* =============== Copyright =============== */
 .copyright {
   font-size: 10px;
   line-height: 20px;
   font-weight: 700;
   font-weight: 400;
+  width: 100%;
+  display: flex;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .copyright {
-    order: 4;
-    width: 100%;
-    display: flex;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
   }
 }/*# sourceMappingURL=main.css.map */

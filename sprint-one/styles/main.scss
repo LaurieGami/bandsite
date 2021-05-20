@@ -7,15 +7,16 @@
     margin: 0;
 }
 
-html {
+body {
     font-family: $font-family;
 }
 
-/* =============== Navigation =============== */
+/* =============== Header =============== */
 .header {
     width: 100%;
 }
 
+/* =============== Navigation =============== */
 .navbar {
     width: 100%;
     background: colors.$primary-black;
@@ -27,6 +28,21 @@ html {
     @media (min-width: 768px) and (max-width: 1279px) {
         flex-direction: row;
         padding: 0 $padding*4.5;
+    }
+    
+    &__logo {
+        @include logo-style;
+        
+        &-link {
+            text-decoration: none;
+            color: colors.$primary-white;
+            display: flex;
+            align-items: center;
+    
+            @media (min-width: 768px) and (max-width: 1279px) {
+                margin-right: $padding*4.5;
+            }
+        }
     }
 
     &__list {
@@ -78,28 +94,6 @@ html {
     }
 }
 
-.logo {
-    @include logo-style;
-
-    @media (min-width: 768px) and (max-width: 1279px) {
-        
-    }
-
-    &-link {
-        text-decoration: none;
-        color: colors.$primary-white;
-
-        @media (min-width: 768px) and (max-width: 1279px) {
-            display: flex;
-            align-items: center;
-            margin-right: $padding*4.5;
-        }
-    }
-}
-
-/* =============== Main =============== */
-// .main {}
-
 /* =============== Hero =============== */
     .hero {
         background: url('../assets/images/hero-bio.jpg');
@@ -114,7 +108,7 @@ html {
 
         @media (min-width: 768px) and (max-width: 1279px) {
             padding: 0 $padding*4.5;
-            height: 70vh;
+            height: 50vh;
         }
 
         &__title {
@@ -177,20 +171,21 @@ html {
 
     &__img {
         width: 100%;
+        display: flex;
     }
 
 }
-        
+
+/* =============== Quote =============== */
 .quote {
     padding-top: $padding*2;
 
     @media (min-width: 768px) and (max-width: 1279px) {
-        padding-top: $padding*3;
+        padding-top: $padding*3; // probably $padding*4.5
     }
 
     &__txt {
-        @include body-copy-mobile;
-        font-weight: 600;
+        @include subheader-mobile;
         padding-bottom: $padding;
 
         @media (min-width: 768px) and (max-width: 1279px) {
@@ -199,22 +194,18 @@ html {
     }
 
     &__author {
-        @include body-copy-mobile;
-        font-weight: 600;
+        @include subheader-mobile;
 
         @media (min-width: 768px) and (max-width: 1279px) {
-            @include body-copy-desktop;
-            font-weight: 600;
+            // @include subheader-desktop; // Not the right font size 
         }
     }
 }
-        
+
+/* =============== Info =============== */
 .info {
     display: flex;
     flex-direction: column;
-
-    @media (min-width: 768px) and (max-width: 1279px) {
-    }
 
     &__title {
         @include subheader-mobile;
@@ -255,6 +246,10 @@ html {
     display: flex;
     flex-direction: column;
 
+    @media (min-width: 768px) and (max-width: 1279px) {
+        padding-bottom: $padding*1.5;
+    }
+
     &__list {
         list-style: none;
         padding: 0;
@@ -275,7 +270,7 @@ html {
 
             @media (min-width: 768px) and (max-width: 1279px) {
                 padding-bottom: $padding*3;
-                width: 30%;
+                width: 31%;
                 height: auto;
             }
         }
@@ -291,26 +286,45 @@ html {
     width: 100%;
     background: colors.$primary-black;
     color: colors.$primary-white;
-    padding: 0 $padding*2 $padding*2;
+    padding: 0 $padding*2 $padding*2; // padding left, right & bottom
     display: flex;
     flex-direction: column;
 
     @media (min-width: 768px) and (max-width: 1279px) {
+        padding: $padding*6 $padding*4.5 $padding*4.5 $padding*4.5;
         flex-direction: row;
         flex-wrap: wrap;
-        padding: $padding*6 $padding*4.5 $padding*4.5 $padding*4.5;
     }
 
-    &__container {
+    &__title {
+        @include section-header-mobile;
         padding: $padding*3 0 $padding*2;
+        display: flex;
+        align-items: center;
 
         @media (min-width: 768px) and (max-width: 1279px) {
-            order: -1;
-            width: 30%;
+            @include section-header-desktop;
+            padding: 0;
+            order: -3;
+            width: 33%;
+            padding: 0 0 $padding*4.5;
+        }
+    }
+
+    &__logo {
+        @include logo-style;
+        
+        &-container {
+            padding: $padding*3 0 $padding*2;
             display: flex;
-            justify-content: flex-end;
             align-items: center;
-            padding: 0 0 $padding*4.5 0;
+    
+            @media (min-width: 768px) and (max-width: 1279px) {
+                order: -1;
+                width: 34%;
+                justify-content: flex-end;
+                padding: 0 0 $padding*4.5;
+            }
         }
     }
 }
@@ -318,90 +332,88 @@ html {
 /* =============== Social Navigation =============== */
 .social {
     padding-bottom: $padding*2;
+    display: flex;
+    flex-direction: column;
 
     @media (min-width: 768px) and (max-width: 1279px) {
         order: -2;
-        width: 70%;
+        padding: 0;
+        width: 33%;
         display: flex;
-        justify-content: space-between;
+        flex-direction: row;
         align-items: center;
         padding-bottom: $padding*4.5;
-    }
-
-    &__title {
-        @include section-header-mobile;
-        padding: $padding*3 0 $padding*2;
-
-        @media (min-width: 768px) and (max-width: 1279px) {
-            padding: 0;
-        }
     }
 
     &__list {
         list-style: none;
         padding: 0;
-        width: 45%;
         display: flex;
-        justify-content: space-between;
+        align-items: flex-end;
 
-        // &-item {}
+        &-item {
+            padding-right: $padding*4;
+        }
     }
 
-    // &__link {}
+    &__link {
+        display: flex;
+    }
 
     &__icon {
-        max-width: 25px;
+        // min-width: 25px;
+        max-height: 25px;
     }
 
 }
 
 /* =============== Contact Info =============== */
 .contact {
+    display: flex;
     width: 100%;
 
     &__list {
         @include footer-copy-mobile;
         list-style: none;
         padding: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
 
         @media (min-width: 768px) and (max-width: 1279px) {
-            order: 3;
-            display: flex;
+            @include footer-copy-desktop;
+            flex-direction: row;
         }
         
         &-item {
             padding-bottom: $padding*3;
+        
+            @media (min-width: 768px) and (max-width: 1279px) {
+                padding-bottom: $padding*6;
+                width: 33%;
+            }
+            
         }
     }
 
     &__person {
         font-weight: 600;
         padding-bottom: $padding*2;
-
-        // &-name {}
-        // &-company {}
     }
+
     &__location {
         padding-bottom: $padding*2;
-
-        // &-line1 {}
-        // &-line2 {}
     }
-
-    // &__email {}
 }
-
-/* =============== Footer Logo / Wordmark =============== */
-//     .footer__logo
 
 /* =============== Copyright =============== */
 .copyright {
     @include label-button-mobile;
     font-weight: 400;
+    width: 100%;
+    display: flex;
 
     @media (min-width: 768px) and (max-width: 1279px) {
-        order: 4;
-        width: 100%;
-        display: flex;
+        @include label-button-desktop;
     }
 }
