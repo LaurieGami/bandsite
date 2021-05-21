@@ -14,20 +14,26 @@ body {
 /* =============== Header =============== */
 .header {
     width: 100%;
+    background: colors.$primary-black;
 }
 
 /* =============== Navigation =============== */
 .navbar {
     width: 100%;
-    background: colors.$primary-black;
     padding-top: $padding*3;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    @media (min-width: 768px) and (max-width: 1279px) {
+    @media (min-width: 768px) {
         flex-direction: row;
         padding: 0 $padding*4.5;
+    }
+
+    @media (min-width: 1280px) {
+        max-width: 1020px;
+        margin: auto;
+        padding: 0;
     }
     
     &__logo {
@@ -39,9 +45,10 @@ body {
             display: flex;
             align-items: center;
     
-            @media (min-width: 768px) and (max-width: 1279px) {
+            @media (min-width: 768px) {
                 margin-right: $padding*4.5;
             }
+
         }
     }
 
@@ -51,7 +58,7 @@ body {
         display: flex;
         width: 100%;
 
-        @media (min-width: 768px) and (max-width: 1279px) {
+        @media (min-width: 768px) {
             width: auto;
         }
         
@@ -59,7 +66,7 @@ body {
             width: 50%;
             display: flex;
 
-            @media (min-width: 768px) and (max-width: 1279px) {
+            @media (min-width: 768px) {
                 width: auto;
                 margin: 0 $padding*3;
             }
@@ -76,7 +83,7 @@ body {
         font-weight: 400;
         padding: $padding*2 $padding*4;
 
-        @media (min-width: 768px) and (max-width: 1279px) {
+        @media (min-width: 768px) {
             width: auto;
             padding: $padding*3 0;
         }
@@ -96,32 +103,51 @@ body {
 
 /* =============== Hero =============== */
     .hero {
-        background: url('../assets/images/hero-bio.jpg');
         width: 100%;
-        height: 35vh;
-        background-position: center;
-        background-size: cover;
         padding: 0 $padding*2;
-        position: relative;
         display: flex;
         align-items: center;
+        z-index: 2;
 
-        @media (min-width: 768px) and (max-width: 1279px) {
+        @media (min-width: 768px) {
             padding: 0 $padding*4.5;
-            height: 50vh;
+        }
+
+        @media (min-width: 1280px) {
+            padding: 0;
+            width: 1020px;
+            margin: 0 auto;
         }
 
         &__title {
             @include page-header-mobile;
             color: colors.$primary-white;
-            z-index: 1;
 
-            @media (min-width: 768px) and (max-width: 1279px) {
+            @media (min-width: 768px) {
                 @include page-header-desktop;
             }
         }
+
+        &-container {
+            background: url('../assets/images/hero-bio.jpg');
+            width: 100%;
+            height: 35vh;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            z-index: 0;
+
+            @media (min-width: 768px) {
+                height: 50vh;
+            }
+
+            @media (min-width: 1280px) {
+                height: 60vh;
+            }
+        }
         
-        &__overlay {
+        &-overlay {
             position: absolute;
             top: 0;
             left: 0;
@@ -129,7 +155,7 @@ body {
             height: 100%;
             background: colors.$primary-black;
             opacity: 0.5;
-            z-index: 0;
+            z-index: 1;
         }
     }
 
@@ -137,17 +163,28 @@ body {
 .article {
     width: 100%;
     padding: 0 $padding*2;
-    background: colors.$primary-white;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    @media (min-width: 768px) and (max-width: 1279px) {
+    @media (min-width: 768px) {
         padding: 0 $padding*4.5;
     }
 
-    &--bg {
-        background: colors.$secondary-white;
+    @media (min-width: 1280px) {
+        padding: 0;
+        width: 1020px;
+        margin: 0 auto;
+    }
+
+    &-container {
+        width: 100%;
+        background: colors.$primary-white;
+        display: flex;
+        
+        &--bg {
+            background: colors.$secondary-white;
+        }
     }
 
     &__title {
@@ -155,18 +192,20 @@ body {
         padding: $padding*3 0 $padding*2;
         align-self: flex-start;
 
-        @media (min-width: 768px) and (max-width: 1279px) {
+        @media (min-width: 768px) {
             @include section-header-desktop;
             padding: $padding*6 0 $padding*4.5;
         }
+
     }
 
     &__content {
         width: 100%;
 
-        @media (min-width: 768px) and (max-width: 1279px) {
+        @media (min-width: 768px) {
             width: 85%;
         }
+
     }
 
     &__img {
@@ -180,7 +219,7 @@ body {
 .quote {
     padding-top: $padding*2;
 
-    @media (min-width: 768px) and (max-width: 1279px) {
+    @media (min-width: 768px) {
         padding-top: $padding*3; // probably $padding*4.5
     }
 
@@ -188,7 +227,7 @@ body {
         @include subheader-mobile;
         padding-bottom: $padding;
 
-        @media (min-width: 768px) and (max-width: 1279px) {
+        @media (min-width: 768px) {
             @include subheader-desktop;
         }
     }
@@ -196,7 +235,7 @@ body {
     &__author {
         @include subheader-mobile;
 
-        @media (min-width: 768px) and (max-width: 1279px) {
+        @media (min-width: 768px) {
             // @include subheader-desktop; // Not the right font size 
         }
     }
@@ -211,7 +250,7 @@ body {
         @include subheader-mobile;
         padding: $padding*3 0 $padding*2;
 
-        @media (min-width: 768px) and (max-width: 1279px) {
+        @media (min-width: 768px) {
             @include subheader-desktop;
             padding: $padding*6 0 $padding*4.5;
         }
@@ -221,9 +260,9 @@ body {
         @include body-copy-mobile;
         padding-bottom: $padding*2;
         
-        @media (min-width: 768px) and (max-width: 1279px) {
+        @media (min-width: 768px) {
             @include body-copy-desktop;
-            width: 49%;
+            width: 48%;
             padding-bottom: $padding*4.5;
         }
 
@@ -231,7 +270,7 @@ body {
             display: flex;
             flex-direction: column;
 
-            @media (min-width: 768px) and (max-width: 1279px) {
+            @media (min-width: 768px) {
                 flex-direction: row;
                 justify-content: space-between;
             }
@@ -246,7 +285,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    @media (min-width: 768px) and (max-width: 1279px) {
+    @media (min-width: 768px) {
         padding-bottom: $padding*1.5;
     }
 
@@ -257,7 +296,7 @@ body {
         flex-direction: column;
         align-items: center;
 
-        @media (min-width: 768px) and (max-width: 1279px) {
+        @media (min-width: 768px) {
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-between;
@@ -268,7 +307,7 @@ body {
             display: flex;
             padding-bottom: $padding*2;
 
-            @media (min-width: 768px) and (max-width: 1279px) {
+            @media (min-width: 768px) {
                 padding-bottom: $padding*3;
                 width: 31%;
                 height: auto;
@@ -284,16 +323,27 @@ body {
 /* =============== Footer =============== */
 .footer {
     width: 100%;
-    background: colors.$primary-black;
+    // background: colors.$primary-black;
     color: colors.$primary-white;
     padding: 0 $padding*2 $padding*2; // padding left, right & bottom
     display: flex;
     flex-direction: column;
 
-    @media (min-width: 768px) and (max-width: 1279px) {
+    @media (min-width: 768px) {
         padding: $padding*6 $padding*4.5 $padding*4.5 $padding*4.5;
         flex-direction: row;
         flex-wrap: wrap;
+    }
+
+    @media (min-width: 1280px) {
+        padding: $padding*6 0 $padding*4.5;
+        width: 1020px;
+        margin: 0 auto;
+    }
+
+    &-container {
+        width: 100%;
+        background: colors.$primary-black;
     }
 
     &__title {
@@ -302,7 +352,7 @@ body {
         display: flex;
         align-items: center;
 
-        @media (min-width: 768px) and (max-width: 1279px) {
+        @media (min-width: 768px) {
             @include section-header-desktop;
             padding: 0;
             order: -3;
@@ -319,7 +369,7 @@ body {
             display: flex;
             align-items: center;
     
-            @media (min-width: 768px) and (max-width: 1279px) {
+            @media (min-width: 768px) {
                 order: -1;
                 width: 34%;
                 justify-content: flex-end;
@@ -335,7 +385,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    @media (min-width: 768px) and (max-width: 1279px) {
+    @media (min-width: 768px) {
         order: -2;
         padding: 0;
         width: 33%;
@@ -380,7 +430,7 @@ body {
         flex-direction: column;
         width: 100%;
 
-        @media (min-width: 768px) and (max-width: 1279px) {
+        @media (min-width: 768px) {
             @include footer-copy-desktop;
             flex-direction: row;
         }
@@ -388,7 +438,7 @@ body {
         &-item {
             padding-bottom: $padding*3;
         
-            @media (min-width: 768px) and (max-width: 1279px) {
+            @media (min-width: 768px) {
                 padding-bottom: $padding*6;
                 width: 33%;
             }
@@ -408,12 +458,11 @@ body {
 
 /* =============== Copyright =============== */
 .copyright {
-    @include label-button-mobile;
-    font-weight: 400;
+    @include footer-copy-mobile;
     width: 100%;
     display: flex;
 
-    @media (min-width: 768px) and (max-width: 1279px) {
-        @include label-button-desktop;
+    @media (min-width: 768px) {
+        @include footer-copy-desktop;
     }
 }

@@ -2,6 +2,7 @@
 /* ==================== Secondary Colors ==================== */
 /* Main Font Family */
 /* Padding Increment */
+/* ==================== Logo ==================== */
 @font-face {
   font-family: "Avenir Next LT Pro";
   src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
@@ -16,11 +17,10 @@
 }
 @font-face {
   font-family: "Avenir Next LT Pro";
-  src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype");
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
 }
-/* ==================== Logo ==================== */
 /* ==================== Mobile Text Styles ==================== */
 /* ==================== Desktop & Tablet Text Styles ==================== */
 * {
@@ -35,21 +35,28 @@ body {
 /* =============== Header =============== */
 .header {
   width: 100%;
+  background: #323232;
 }
 
 /* =============== Navigation =============== */
 .navbar {
   width: 100%;
-  background: #323232;
   padding-top: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .navbar {
     flex-direction: row;
     padding: 0 36px;
+  }
+}
+@media (min-width: 1280px) {
+  .navbar {
+    max-width: 1020px;
+    margin: auto;
+    padding: 0;
   }
 }
 .navbar__logo {
@@ -67,7 +74,7 @@ body {
   display: flex;
   align-items: center;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .navbar__logo-link {
     margin-right: 36px;
   }
@@ -78,7 +85,7 @@ body {
   display: flex;
   width: 100%;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .navbar__list {
     width: auto;
   }
@@ -87,7 +94,7 @@ body {
   width: 50%;
   display: flex;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .navbar__list-item {
     width: auto;
     margin: 0 24px;
@@ -104,7 +111,7 @@ body {
   font-weight: 400;
   padding: 16px 32px;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .navbar__link {
     width: auto;
     padding: 24px 0;
@@ -122,20 +129,22 @@ body {
 
 /* =============== Hero =============== */
 .hero {
-  background: url("../assets/images/hero-bio.jpg");
   width: 100%;
-  height: 35vh;
-  background-position: center;
-  background-size: cover;
   padding: 0 16px;
-  position: relative;
   display: flex;
   align-items: center;
+  z-index: 2;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .hero {
     padding: 0 36px;
-    height: 50vh;
+  }
+}
+@media (min-width: 1280px) {
+  .hero {
+    padding: 0;
+    width: 1020px;
+    margin: 0 auto;
   }
 }
 .hero__title {
@@ -143,16 +152,35 @@ body {
   line-height: 32px;
   font-weight: 700;
   color: #FFFFFF;
-  z-index: 1;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .hero__title {
     font-size: 60px;
     line-height: 68px;
     font-weight: 700;
   }
 }
-.hero__overlay {
+.hero-container {
+  background: url("../assets/images/hero-bio.jpg");
+  width: 100%;
+  height: 35vh;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  z-index: 0;
+}
+@media (min-width: 768px) {
+  .hero-container {
+    height: 50vh;
+  }
+}
+@media (min-width: 1280px) {
+  .hero-container {
+    height: 60vh;
+  }
+}
+.hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -160,24 +188,35 @@ body {
   height: 100%;
   background: #323232;
   opacity: 0.5;
-  z-index: 0;
+  z-index: 1;
 }
 
 /* =============== About =============== */
 .article {
   width: 100%;
   padding: 0 16px;
-  background: #FFFFFF;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .article {
     padding: 0 36px;
   }
 }
-.article--bg {
+@media (min-width: 1280px) {
+  .article {
+    padding: 0;
+    width: 1020px;
+    margin: 0 auto;
+  }
+}
+.article-container {
+  width: 100%;
+  background: #FFFFFF;
+  display: flex;
+}
+.article-container--bg {
   background: #FAFAFA;
 }
 .article__title {
@@ -187,7 +226,7 @@ body {
   padding: 24px 0 16px;
   align-self: flex-start;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .article__title {
     font-size: 36px;
     line-height: 44px;
@@ -198,7 +237,7 @@ body {
 .article__content {
   width: 100%;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .article__content {
     width: 85%;
   }
@@ -212,7 +251,7 @@ body {
 .quote {
   padding-top: 16px;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .quote {
     padding-top: 24px;
   }
@@ -223,7 +262,7 @@ body {
   font-weight: 600;
   padding-bottom: 8px;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .quote__txt {
     font-size: 24px;
     line-height: 32px;
@@ -246,7 +285,7 @@ body {
   font-weight: 600;
   padding: 24px 0 16px;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .info__title {
     font-size: 24px;
     line-height: 32px;
@@ -260,12 +299,12 @@ body {
   font-weight: 400;
   padding-bottom: 16px;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .info__txt {
     font-size: 14px;
     line-height: 22px;
     font-weight: 400;
-    width: 49%;
+    width: 48%;
     padding-bottom: 36px;
   }
 }
@@ -273,7 +312,7 @@ body {
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .info__txt-container {
     flex-direction: row;
     justify-content: space-between;
@@ -286,7 +325,7 @@ body {
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .gallery {
     padding-bottom: 12px;
   }
@@ -298,7 +337,7 @@ body {
   flex-direction: column;
   align-items: center;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .gallery__list {
     flex-direction: row;
     flex-wrap: wrap;
@@ -310,7 +349,7 @@ body {
   display: flex;
   padding-bottom: 16px;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .gallery__list-item {
     padding-bottom: 24px;
     width: 31%;
@@ -324,18 +363,28 @@ body {
 /* =============== Footer =============== */
 .footer {
   width: 100%;
-  background: #323232;
   color: #FFFFFF;
   padding: 0 16px 16px;
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .footer {
     padding: 48px 36px 36px 36px;
     flex-direction: row;
     flex-wrap: wrap;
   }
+}
+@media (min-width: 1280px) {
+  .footer {
+    padding: 48px 0 36px;
+    width: 1020px;
+    margin: 0 auto;
+  }
+}
+.footer-container {
+  width: 100%;
+  background: #323232;
 }
 .footer__title {
   font-size: 24px;
@@ -345,7 +394,7 @@ body {
   display: flex;
   align-items: center;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .footer__title {
     font-size: 36px;
     line-height: 44px;
@@ -370,7 +419,7 @@ body {
   display: flex;
   align-items: center;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .footer__logo-container {
     order: -1;
     width: 34%;
@@ -385,7 +434,7 @@ body {
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .social {
     order: -2;
     padding: 0;
@@ -427,7 +476,7 @@ body {
   flex-direction: column;
   width: 100%;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .contact__list {
     font-size: 14px;
     line-height: 20px;
@@ -438,7 +487,7 @@ body {
 .contact__list-item {
   padding-bottom: 24px;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .contact__list-item {
     padding-bottom: 48px;
     width: 33%;
@@ -454,17 +503,16 @@ body {
 
 /* =============== Copyright =============== */
 .copyright {
-  font-size: 10px;
-  line-height: 20px;
-  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
   font-weight: 400;
   width: 100%;
   display: flex;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .copyright {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 20px;
-    font-weight: 700;
+    font-weight: 400;
   }
 }/*# sourceMappingURL=main.css.map */
