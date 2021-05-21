@@ -1,6 +1,7 @@
 @use 'partials/colors';
 @use 'partials/typography' as *;
 @use 'partials/variables' as *;
+@use 'partials/mixins' as *;
 
 * {
     box-sizing: border-box;
@@ -53,10 +54,9 @@ body {
     }
 
     &__list {
-        list-style: none;
-        padding: 0;
-        display: flex;
+        @include list-style-reset;
         width: 100%;
+        display: flex;
 
         @media (min-width: 768px) {
             width: auto;
@@ -172,8 +172,8 @@ body {
     }
 
     @media (min-width: 1280px) {
-        padding: 0;
         width: 1020px;
+        padding: 0;
         margin: 0 auto;
     }
 
@@ -220,7 +220,7 @@ body {
     padding-top: $padding*2;
 
     @media (min-width: 768px) {
-        padding-top: $padding*3; // probably $padding*4.5
+        padding-top: $padding*4.5;
     }
 
     &__txt {
@@ -235,9 +235,9 @@ body {
     &__author {
         @include subheader-mobile;
 
-        @media (min-width: 768px) {
-            // @include subheader-desktop; // Not the right font size 
-        }
+        // @media (min-width: 768px) {
+        //     @include subheader-desktop; // Not the right font size compared to the mock up
+        // }
     }
 }
 
@@ -290,8 +290,7 @@ body {
     }
 
     &__list {
-        list-style: none;
-        padding: 0;
+        @include list-style-reset;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -316,6 +315,11 @@ body {
 
         &-img {
             width: 100%;
+            filter: grayscale(100%);
+        }
+
+        &-img:hover {
+            filter: grayscale(0%);
         }
     }
 }
@@ -323,7 +327,6 @@ body {
 /* =============== Footer =============== */
 .footer {
     width: 100%;
-    // background: colors.$primary-black;
     color: colors.$primary-white;
     padding: 0 $padding*2 $padding*2; // padding left, right & bottom
     display: flex;
@@ -396,8 +399,7 @@ body {
     }
 
     &__list {
-        list-style: none;
-        padding: 0;
+        @include list-style-reset;
         display: flex;
         align-items: flex-end;
 
@@ -424,11 +426,10 @@ body {
 
     &__list {
         @include footer-copy-mobile;
-        list-style: none;
-        padding: 0;
+        @include list-style-reset;
+        width: 100%;
         display: flex;
         flex-direction: column;
-        width: 100%;
 
         @media (min-width: 768px) {
             @include footer-copy-desktop;
@@ -453,6 +454,11 @@ body {
 
     &__location {
         padding-bottom: $padding*2;
+    }
+
+    &__email {
+        text-decoration: none;
+        color: colors.$primary-white;
     }
 }
 

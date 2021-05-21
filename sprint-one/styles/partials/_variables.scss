@@ -1,16 +1,7 @@
-/* Main Font Family */
-$font-family: 'Avenir Next LT Pro', sans-serif;
+@use 'typography' as *;
 
-/* Padding Increment */
+/* ==================== Main Font Family ==================== */
+$font-family: "Avenir", sans-serif;
+
+/* ==================== Padding Increment ==================== */
 $padding: 8px;
-
-/* ==================== Logo ==================== */
-@mixin logo-style {
-    max-height: 20px;
-    max-width: 120px;
-    font-size: 20px;
-    font-weight: 400;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-}

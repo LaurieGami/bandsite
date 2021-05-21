@@ -1,110 +1,26 @@
-@use 'variables' as *;
-
+/* ==================== Bold ==================== */
 @font-face {
-    font-family: "Avenir Next LT Pro";
+    font-family: "Avenir";
     src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+    src: url("../../assets/fonts/alternative-fonts/AvenirNextLTProBold.ttf") format("truetype");
     font-style: normal;
     font-weight: 700;
 }
 
+/* ==================== Demi ==================== */
 @font-face {
-    font-family: "Avenir Next LT Pro";
+    font-family: "Avenir";
     src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype");
+    src: url("../../assets/fonts/alternative-fonts/AvenirNextLTProDemi.ttf") format("truetype");
     font-style: normal;
     font-weight: 600;
 }
 
+/* ==================== Regular ==================== */
 @font-face {
-    font-family: "Avenir Next LT Pro";
+    font-family: "Avenir";
     src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+    src: url("../../assets/fonts/alternative-fonts/AvenirNextLTPro.ttf") format("truetype");
     font-style: normal;
     font-weight: 400;
-}
-
-/* ==================== Mobile Text Styles ==================== */
-
-// Mobile - Page Header
-@mixin page-header-mobile {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 700;
-}
-
-// Mobile - Section Header
-@mixin section-header-mobile {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 700;
-}
-
-// Mobile - Subheader
-@mixin subheader-mobile {
-    font-size: 14px;
-    line-height: 22px;
-    font-weight: 600;
-}
-
-// Mobile - Body Copy
-@mixin body-copy-mobile {
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 400;
-}
-
-// Mobile - Footer Copy
-@mixin footer-copy-mobile {
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 400;
-}
-
-// Mobile - Labels & Buttons
-@mixin label-button-mobile {
-    font-size: 10px;
-    line-height: 20px;
-    font-weight: 700;
-}
-
-/* ==================== Desktop & Tablet Text Styles ==================== */
-
-// Desktop & Tablet - Page Header
-@mixin page-header-desktop {
-    font-size: 60px;
-    line-height: 68px;
-    font-weight: 700;
-}
-
-// Desktop & Tablet - Section Header
-@mixin section-header-desktop {
-    font-size: 36px;
-    line-height: 44px;
-    font-weight: 700;
-}
-
-// Desktop & Tablet - Subheader
-@mixin subheader-desktop {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 600;
-}
-
-// Desktop & Tablet - Body Copy
-@mixin body-copy-desktop {
-    font-size: 14px;
-    line-height: 22px;
-    font-weight: 400;
-}
-
-// Desktop & Tablet - Footer Copy
-@mixin footer-copy-desktop {
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 400;
-}
-
-// Desktop & Tablet - Labels & Buttons
-@mixin label-button-desktop {
-    font-size: 12px;
-    line-height: 20px;
-    font-weight: 700;
 }
