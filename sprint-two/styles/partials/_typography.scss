@@ -1,0 +1,26 @@
+/* ==================== Bold ==================== */
+@font-face {
+    font-family: "Avenir";
+    src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+    src: url("../../assets/fonts/alternative-fonts/AvenirNextLTProBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+/* ==================== Demi ==================== */
+@font-face {
+    font-family: "Avenir";
+    src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype");
+    src: url("../../assets/fonts/alternative-fonts/AvenirNextLTProDemi.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+/* ==================== Regular ==================== */
+@font-face {
+    font-family: "Avenir";
+    src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+    src: url("../../assets/fonts/alternative-fonts/AvenirNextLTPro.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
