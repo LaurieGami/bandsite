@@ -4,19 +4,19 @@ let concerts = [
         date: "Mon Sept 06 2021",
         venue: "Ronald Lane",
         location: "San Francisco, CA",
-        link: "https://www.ticketmaster.ca/"
+        link: "https://thefillmore.com/"
     },
     {
         date: "Tue Sept 21 2021",
         venue: "Pier 3 East",
         location: "San Francisco, CA",
-        link: "https://www.ticketmaster.ca/"
+        link: "https://www.thewarfieldtheatre.com/"
     },
     {
         date: "Fri Oct 15 2021",
         venue: "View Lounge",
         location: "San Francisco, CA",
-        link: "https://www.ticketmaster.ca/"
+        link: "https://www.theregencyballroom.com/"
     },
     {
         date: "Sat Nov 06 2021",
@@ -57,15 +57,14 @@ const createConcertItems = (listName) => {
     location.classList.add('shows__list-location');
     item.appendChild(location);
 
-    let button = document.createElement('a');
+    let button = document.createElement('button');
     button.innerText = 'Buy Tickets';
-    button.setAttribute("href", `${listName.link}`);
+    button.addEventListener('click', (event) => {
+        event.preventDefault();
+        window.open(`${listName.link}`, '_blank');
+    });
     button.classList.add('shows__list-button');
     item.appendChild(button);
-
-    let divider = document.createElement('div');
-    divider.classList.add('divider');
-    item.appendChild(divider);
 
     return item;
 }

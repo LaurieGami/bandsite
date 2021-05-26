@@ -341,13 +341,16 @@ body {
     flex-direction: column;
     
     &__form {
+        @include divider;
         display: flex;
         flex-direction: column;
+        padding-bottom: $padding*2;
     }
 
     &__container {
         display: flex;
         flex-direction: column;
+        padding-bottom: $padding*2;
     }
 
     &__list {
@@ -357,6 +360,8 @@ body {
         width: 100%;
 
         &-item {
+            @include divider;
+            padding: $padding*2 0;
             display: flex;
             flex-wrap: wrap;
         }
@@ -365,6 +370,7 @@ body {
             @include subheader-mobile;
             display: flex;
             width: 80%;
+            padding-bottom: $padding;
         }
 
         &-timestamp {
@@ -373,6 +379,7 @@ body {
             display: flex;
             justify-content: flex-end;
             width: 20%;
+            padding-bottom: $padding;
         }
 
         &-text {

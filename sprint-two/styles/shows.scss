@@ -103,13 +103,30 @@
 
 /* =============== Show List =============== */
 .shows {
+    width: 100%;
+    
+    @media (min-width: 768px) {
+        padding-bottom: $padding*2;
+    }
+
     &__list {
         @include list-style-reset;
         @include body-copy-mobile;
+        padding-bottom: $padding*2;
 
         &-item {
+            @include divider;
             display: flex;
             flex-direction: column;
+            width: 100%;
+            padding: $padding*2 0;
+
+            @media (min-width: 768px) {
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+            }
         }
 
         &-date {
@@ -118,10 +135,19 @@
             flex-direction: column;
             padding-bottom: $padding*2;
 
+            @media (min-width: 768px) {
+                width: 25%;
+                padding-bottom: 0;
+            }
+
             &::before {
                 @include label-button-mobile;
                 content: 'Dates';
                 color: colors.$secondary-grey;
+
+                @media (min-width: 768px) {
+                    content: '';
+                }
             }
         }
 
@@ -130,10 +156,19 @@
             flex-direction: column;
             padding-bottom: $padding*2;
 
+            @media (min-width: 768px) {
+                width: 25%;
+                padding-bottom: 0;
+            }
+
             &::before {
                 @include label-button-mobile;
                 content: 'Venue';
                 color: colors.$secondary-grey;
+
+                @media (min-width: 768px) {
+                    content: '';
+                }
             }
         }
 
@@ -142,15 +177,32 @@
             flex-direction: column;
             padding-bottom: $padding*2;
 
+            @media (min-width: 768px) {
+                width: 25%;
+                padding-bottom: 0;
+            }
+
             &::before {
                 @include label-button-mobile;
                 content: 'Location';
                 color: colors.$secondary-grey;
+
+                @media (min-width: 768px) {
+                    content: '';
+                }
             }
         }
 
         &-button {
             @include button;
+
+            @media (min-width: 768px) {
+                width: 25%;
+            }
+
+            &:hover {
+                @include button-hover;
+            }
         }
     }
 }

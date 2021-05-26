@@ -28,6 +28,8 @@
 /* ==================== Padding Increment ==================== */
 /* ==================== List Style Reset ==================== */
 /* ==================== Logo ==================== */
+/* ==================== Button ==================== */
+/* ==================== Divider ==================== */
 /* ==================== Mobile Text Styles ==================== */
 /* ==================== Desktop & Tablet Text Styles ==================== */
 * {
@@ -388,12 +390,15 @@ body {
   flex-direction: column;
 }
 .comments__form {
+  border-bottom: 1px solid #E1E1E1;
   display: flex;
   flex-direction: column;
+  padding-bottom: 16px;
 }
 .comments__container {
   display: flex;
   flex-direction: column;
+  padding-bottom: 16px;
 }
 .comments__list {
   list-style: none;
@@ -403,6 +408,8 @@ body {
   width: 100%;
 }
 .comments__list-item {
+  border-bottom: 1px solid #E1E1E1;
+  padding: 16px 0;
   display: flex;
   flex-wrap: wrap;
 }
@@ -412,6 +419,7 @@ body {
   font-weight: 600;
   display: flex;
   width: 80%;
+  padding-bottom: 8px;
 }
 .comments__list-timestamp {
   font-size: 13px;
@@ -421,6 +429,7 @@ body {
   display: flex;
   justify-content: flex-end;
   width: 20%;
+  padding-bottom: 8px;
 }
 .comments__list-text {
   font-size: 13px;

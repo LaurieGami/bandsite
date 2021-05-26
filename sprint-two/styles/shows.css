@@ -28,6 +28,8 @@
 /* ==================== Padding Increment ==================== */
 /* ==================== List Style Reset ==================== */
 /* ==================== Logo ==================== */
+/* ==================== Button ==================== */
+/* ==================== Divider ==================== */
 /* ==================== Mobile Text Styles ==================== */
 /* ==================== Desktop & Tablet Text Styles ==================== */
 /* =============== Show Hero =============== */
@@ -131,16 +133,36 @@
 }
 
 /* =============== Show List =============== */
+.shows {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .shows {
+    padding-bottom: 16px;
+  }
+}
 .shows__list {
   list-style: none;
   padding: 0;
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
+  padding-bottom: 16px;
 }
 .shows__list-item {
+  border-bottom: 1px solid #E1E1E1;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  padding: 16px 0;
+}
+@media (min-width: 768px) {
+  .shows__list-item {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 .shows__list-date {
   font-size: 14px;
@@ -150,6 +172,12 @@
   flex-direction: column;
   padding-bottom: 16px;
 }
+@media (min-width: 768px) {
+  .shows__list-date {
+    width: 25%;
+    padding-bottom: 0;
+  }
+}
 .shows__list-date::before {
   font-size: 10px;
   line-height: 20px;
@@ -158,10 +186,21 @@
   content: "Dates";
   color: #E1E1E1;
 }
+@media (min-width: 768px) {
+  .shows__list-date::before {
+    content: "";
+  }
+}
 .shows__list-venue {
   display: flex;
   flex-direction: column;
   padding-bottom: 16px;
+}
+@media (min-width: 768px) {
+  .shows__list-venue {
+    width: 25%;
+    padding-bottom: 0;
+  }
 }
 .shows__list-venue::before {
   font-size: 10px;
@@ -171,10 +210,21 @@
   content: "Venue";
   color: #E1E1E1;
 }
+@media (min-width: 768px) {
+  .shows__list-venue::before {
+    content: "";
+  }
+}
 .shows__list-location {
   display: flex;
   flex-direction: column;
   padding-bottom: 16px;
+}
+@media (min-width: 768px) {
+  .shows__list-location {
+    width: 25%;
+    padding-bottom: 0;
+  }
 }
 .shows__list-location::before {
   font-size: 10px;
@@ -183,6 +233,11 @@
   text-transform: uppercase;
   content: "Location";
   color: #E1E1E1;
+}
+@media (min-width: 768px) {
+  .shows__list-location::before {
+    content: "";
+  }
 }
 .shows__list-button {
   font-size: 12px;
@@ -205,4 +260,12 @@
     min-width: 150px;
     padding: 0 32px;
   }
+}
+@media (min-width: 768px) {
+  .shows__list-button {
+    width: 25%;
+  }
+}
+.shows__list-button:hover {
+  background: #000000;
 }/*# sourceMappingURL=shows.css.map */

@@ -38,10 +38,6 @@ const createCommentItems = (listName) => {
     text.classList.add('comments__list-text');
     item.appendChild(text);
 
-    let divider = document.createElement('div');
-    divider.classList.add('divider');
-    item.appendChild(divider);
-
     return item;
 }
 
