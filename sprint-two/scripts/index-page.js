@@ -18,11 +18,7 @@ let comments = [
 ];
 
 // Display Comments on Page
-// 1. Create a ul (comments list) element to hold future li items (comments items)
-// let list = document.createElement('ul');
-// list.classList.add('comment__list');
 
-// 2. Create a function that takes the info from our comments Array and create an li item from each object
 const createCommentItems = (listName) => {
     let item = document.createElement('li');
     item.classList.add('comments__list-item');
@@ -49,7 +45,7 @@ const createCommentItems = (listName) => {
     return item;
 }
 
-const displayComment = (commentList, commentListTarget) => {
+const displayComment = (commentList) => {
     let list = document.createElement('ul');
     list.classList.add('comments__list');
 
@@ -58,9 +54,9 @@ const displayComment = (commentList, commentListTarget) => {
         list.appendChild(listItem);
     }
 
-    document.querySelector(commentListTarget).appendChild(list);
+    document.querySelector('.comments__container').appendChild(list);
 
     return list;
 }
 
-displayComment(comments, '.comments__container');
+displayComment(comments);
