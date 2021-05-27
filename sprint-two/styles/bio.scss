@@ -212,6 +212,9 @@ body {
 
     &__content {
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         @media (min-width: 768px) {
             width: 85%;
@@ -339,6 +342,11 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 1280px) {
+        width: 60%;
+    }
     
     // Comment Form Style
     &__form {
@@ -347,6 +355,10 @@ body {
         display: flex;
         justify-content: space-between;
         padding-bottom: $padding*2;
+
+        @media (min-width: 768px) {
+            padding-bottom: $padding*3;
+        }
     }
 
     // Comment Container Style
@@ -354,6 +366,10 @@ body {
         display: flex;
         flex-direction: column;
         padding-bottom: $padding*2;
+
+        @media (min-width: 768px) {
+            padding-bottom: $padding*4.5;
+        }
     }
 }
 
@@ -364,22 +380,40 @@ body {
     width: 100%;
     padding: $padding*2 0;
 
+    @media (min-width: 768px) {
+        padding: $padding*3 0;
+    }
+
     &__left {
         display: flex;
-        width: 18%
+        width: 18%;
+        
+        @media (min-width: 768px) {
+            width: 12%;
+        }
     }
 
     &__right {
         display: flex;
         flex-wrap: wrap;
         width: 82%;
+
+        @media (min-width: 768px) {
+            width: 88%;
+        }
     }
 
     &__name {
-        @include subheader-mobile;
+        @include body-copy-mobile;
+        font-weight: 600;
         display: flex;
         width: 80%;
         padding-bottom: $padding;
+
+        @media (min-width: 768px) {
+            @include body-copy-desktop;
+            font-weight: 600;
+        }
     }
 
     &__timestamp {
@@ -389,12 +423,20 @@ body {
         justify-content: flex-end;
         width: 20%;
         padding-bottom: $padding;
+
+        @media (min-width: 768px) {
+            @include body-copy-desktop;
+        }
     }
 
     &__text {
         @include body-copy-mobile;
         display: flex;
         width: 100%;
+
+        @media (min-width: 768px) {
+            @include body-copy-desktop;
+        }
     }
 }
 
@@ -411,6 +453,11 @@ body {
         overflow: hidden;
         background: colors.$secondary-grey;
         display: flex;
+
+        @media (min-width: 768px) {
+            width: 48px; // 48px for Desktop & Tablet
+            height: 48px; // 48px for Desktop & Tablet
+        }
     }
 }
 
@@ -427,23 +474,40 @@ body {
         align-items: flex-end;
         width: 100%;
         padding-bottom: $padding*2;
+
+        @media (min-width: 768px) {
+            padding-bottom: $padding*3;
+        }
     }
 
     &__avatar {
         display: flex;
         width: 18%;
+
+        @media (min-width: 768px) {
+            width: 12%;
+        }
     }
 
     &__name {
         display: flex;
         flex-direction: column;
         width: 82%;
+
+        @media (min-width: 768px) {
+            width: 88%;
+        }
     }
 
     &__container {
         display: flex;
         flex-direction: column;
+        align-items: flex-end;
         width: 82%;
+
+        @media (min-width: 768px) {
+            width: 88%;
+        }
     }
 
     &__comment {
@@ -451,18 +515,32 @@ body {
         flex-direction: column;
         width: 100%;
         padding-bottom: $padding*2;
+
+        @media (min-width: 768px) {
+            padding-bottom: $padding*3;
+        }
     }
 
     &__label {
         @include label-button-mobile;
         color: colors.$secondary-grey;
         margin-bottom: $padding/2;
+
+        @media (min-width: 768px) {
+            @include label-button-desktop;
+        }
+        
     }
 
     &__text {
         @include body-copy-mobile;
         @include form-input;
         height: 36px;
+
+        @media (min-width: 768px) {
+            @include body-copy-desktop;
+            height: 48px;
+        }
 
         &::placeholder {
             color: colors.$primary-black;
@@ -483,6 +561,10 @@ body {
         @include form-input;
         height: 100px;
 
+        @media (min-width: 768px) {
+            @include body-copy-desktop;
+        }
+
         &::placeholder {
             color: colors.$primary-black;
         }
@@ -498,7 +580,11 @@ body {
     }
 
     &__btn {
-        @include button;
+        @include button-mobile;
+
+        @media (min-width: 768px) {
+            @include button-desktop;
+        }
 
         &:hover {
             @include button-hover;
