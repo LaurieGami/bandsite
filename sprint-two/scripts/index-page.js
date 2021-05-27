@@ -17,42 +17,99 @@ let comments = [
     }
 ];
 
-// Display Comments on Page
+// Create an element with a class
+const makeElement = (element, className) => {
+    let anElement = document.createElement(element);
+    anElement.classList.add(className);
+    return anElement;
+}
 
-const createCommentItems = (listName) => {
-    let item = document.createElement('li');
-    item.classList.add('comments__list-item');
+// Create avatar for card comment
+const createAvatar = () => {
+    // Create the container for avatar
+    let avatarContainer = makeElement('div', 'avatar-container');
+
+    // Create the avatar
+    let avatar = makeElement('img', 'avatar');
+    avatar.setAttribute('src', '');
+
+    // Add avatar to avatar container
+    avatarContainer.appendChild(avatar);
+
+    return avatarContainer;
+}
+
+// Create a card for each comment
+const createCommentItems = (commentArray) => {
+    // Create the container of the card
+    let item = makeElement('article', 'comment');
+
+    // Create the left side of the card
+    let leftSide = makeElement('div', 'comment__left');
+    leftSide.appendChild(createAvatar());
+
+    // Create the right side of the card
+    let rightSide = makeElement('div', 'comment__right');
     
-    let name = document.createElement('h3');
-    name.innerText = `${listName.name}`;
-    name.classList.add('comments__list-name');
-    item.appendChild(name);
+    // Create the heading of the card
+    let name = makeElement('h3', 'comment__name');
+    name.innerText = commentArray.name;
+    rightSide.appendChild(name);
 
-    let timeStamp = document.createElement('p');
-    timeStamp.innerText = `${listName.timeStamp}`;
-    timeStamp.classList.add('comments__list-timestamp');
-    item.appendChild(timeStamp);
+    // Create the timestamp of the card
+    let timeStamp = makeElement('p', 'comment__timestamp');
+    timeStamp.innerText = commentArray.timeStamp;
+    rightSide.appendChild(timeStamp);
 
-    let text = document.createElement('p');
-    text.innerText = `${listName.text}`;
-    text.classList.add('comments__list-text');
-    item.appendChild(text);
+    // Create the comment of the card
+    let text = makeElement('p', 'comment__text');
+    text.innerText = commentArray.text;
+    rightSide.appendChild(text);
+
+    item.appendChild(leftSide);
+    item.appendChild(rightSide);
 
     return item;
 }
 
-const displayComment = (commentList) => {
-    let list = document.createElement('ul');
-    list.classList.add('comments__list');
+const displayComment = (commentArray) => {
+    // Target the container of the comments
+    const comments = document.getElementById('comment-container');
 
-    for (let i = 0; i < commentList.length; i++) {
-        let listItem = createCommentItems(commentList[i]);
-        list.appendChild(listItem);
+    // Empty the comments' container prior to display it
+    comments.innerHTML = '';
+
+    // Go through all the comments in the array and add it to the container
+    for (let i = 0; i < commentArray.length; i++) {
+        let card = createCommentItems(commentArray[i]);
+        comments.appendChild(card);
     }
-
-    document.querySelector('.comments__container').appendChild(list);
-
-    return list;
 }
 
+// Control the submit event of our form
+const constrolSubmit = (event) => {
+    // Prevent the page from reloading at submit event
+    event.preventDefault();
+
+    let today = new Date();
+    // let date = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear();
+
+    // Create a new comment object with the form inputs as data
+    let data = {
+        name: event.target.name.value,
+        timeStamp: (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear(),
+        text: event.target.comment.value
+    }
+
+    // Add the new comment object to the beginning of the array
+    comments.unshift(data);
+
+    // Display all the comments (including the new one) on the page
+    displayComment(comments);
+
+    // Reset the form inputs
+    commentForm.reset();
+}
+
+commentForm.addEventListener('submit', constrolSubmit);
 displayComment(comments);

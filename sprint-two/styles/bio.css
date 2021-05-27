@@ -1,5 +1,6 @@
 /* ==================== Primary Colors ==================== */
 /* ==================== Secondary Colors ==================== */
+/* ==================== Forms ==================== */
 /* ==================== Bold ==================== */
 @font-face {
   font-family: "Avenir";
@@ -391,8 +392,9 @@ body {
 }
 .comments__form {
   border-bottom: 1px solid #E1E1E1;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   padding-bottom: 16px;
 }
 .comments__container {
@@ -400,20 +402,23 @@ body {
   flex-direction: column;
   padding-bottom: 16px;
 }
-.comments__list {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-.comments__list-item {
+
+.comment {
   border-bottom: 1px solid #E1E1E1;
+  display: flex;
+  width: 100%;
   padding: 16px 0;
+}
+.comment__left {
+  display: flex;
+  width: 18%;
+}
+.comment__right {
   display: flex;
   flex-wrap: wrap;
+  width: 82%;
 }
-.comments__list-name {
+.comment__name {
   font-size: 14px;
   line-height: 22px;
   font-weight: 600;
@@ -421,7 +426,7 @@ body {
   width: 80%;
   padding-bottom: 8px;
 }
-.comments__list-timestamp {
+.comment__timestamp {
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
@@ -431,7 +436,7 @@ body {
   width: 20%;
   padding-bottom: 8px;
 }
-.comments__list-text {
+.comment__text {
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
@@ -439,22 +444,12 @@ body {
   width: 100%;
 }
 
-/* =============== Form =============== */
-.form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  width: 100%;
-}
-.form__avatar {
-  width: 18%;
-  align-self: flex-end;
-}
-.form__img {
+/* =============== Avatar =============== */
+.avatar {
   height: 100%;
   width: auto;
 }
-.form__img-container {
+.avatar-container {
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -462,15 +457,40 @@ body {
   background: #E1E1E1;
   display: flex;
 }
+
+/* =============== Form =============== */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+}
+.form__personal-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  padding-bottom: 16px;
+}
+.form__avatar {
+  display: flex;
+  width: 18%;
+}
 .form__name {
   display: flex;
   flex-direction: column;
   width: 82%;
 }
-.form__text {
+.form__container {
   display: flex;
   flex-direction: column;
   width: 82%;
+}
+.form__comment {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 16px;
 }
 .form__label {
   font-size: 10px;
@@ -480,7 +500,7 @@ body {
   color: #E1E1E1;
   margin-bottom: 4px;
 }
-.form__input {
+.form__text {
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
@@ -489,9 +509,52 @@ body {
   border-radius: 4px;
   border: 1px solid #E1E1E1;
   background: #FAFAFA;
+  color: #323232;
+  height: 36px;
 }
-.form__input:active {
+.form__text::-moz-placeholder {
+  color: #323232;
+}
+.form__text:-ms-input-placeholder {
+  color: #323232;
+}
+.form__text::placeholder {
+  color: #323232;
+}
+.form__text:focus {
+  outline: none;
   border: 1px solid #323232;
+}
+.form__text:invalid {
+  border: 1px solid #D22D2D;
+}
+.form__textarea {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  font-family: "Avenir", sans-serif;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #E1E1E1;
+  background: #FAFAFA;
+  color: #323232;
+  height: 100px;
+}
+.form__textarea::-moz-placeholder {
+  color: #323232;
+}
+.form__textarea:-ms-input-placeholder {
+  color: #323232;
+}
+.form__textarea::placeholder {
+  color: #323232;
+}
+.form__textarea:focus {
+  outline: none;
+  border: 1px solid #323232;
+}
+.form__textarea:invalid {
+  border: 1px solid #D22D2D;
 }
 .form__btn {
   font-size: 12px;
@@ -508,12 +571,6 @@ body {
   border-style: none;
   border-radius: 4px;
   width: 100%;
-}
-@media (min-width: 768px) {
-  .form__btn {
-    min-width: 150px;
-    padding: 0 32px;
-  }
 }
 .form__btn:hover {
   background: #000000;

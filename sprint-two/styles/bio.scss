@@ -340,80 +340,98 @@ body {
     display: flex;
     flex-direction: column;
     
+    // Comment Form Style
     &__form {
         @include divider;
+        width: 100%;
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
         padding-bottom: $padding*2;
     }
 
+    // Comment Container Style
     &__container {
         display: flex;
         flex-direction: column;
         padding-bottom: $padding*2;
     }
+}
 
-    &__list {
-        @include list-style-reset;
+
+.comment {
+    @include divider;
+    display: flex;
+    width: 100%;
+    padding: $padding*2 0;
+
+    &__left {
         display: flex;
-        flex-direction: column;
+        width: 18%
+    }
+
+    &__right {
+        display: flex;
+        flex-wrap: wrap;
+        width: 82%;
+    }
+
+    &__name {
+        @include subheader-mobile;
+        display: flex;
+        width: 80%;
+        padding-bottom: $padding;
+    }
+
+    &__timestamp {
+        @include body-copy-mobile;
+        color: colors.$secondary-grey;
+        display: flex;
+        justify-content: flex-end;
+        width: 20%;
+        padding-bottom: $padding;
+    }
+
+    &__text {
+        @include body-copy-mobile;
+        display: flex;
         width: 100%;
+    }
+}
 
-        &-item {
-            @include divider;
-            padding: $padding*2 0;
-            display: flex;
-            flex-wrap: wrap;
-        }
+/* =============== Avatar =============== */
 
-        &-name {
-            @include subheader-mobile;
-            display: flex;
-            width: 80%;
-            padding-bottom: $padding;
-        }
-
-        &-timestamp {
-            @include body-copy-mobile;
-            color: colors.$secondary-grey;
-            display: flex;
-            justify-content: flex-end;
-            width: 20%;
-            padding-bottom: $padding;
-        }
-
-        &-text {
-            @include body-copy-mobile;
-            display: flex;
-            width: 100%;
-        }
+.avatar {
+    height: 100%;
+    width: auto;
+    
+    &-container {
+        width: 36px; // 48px for Desktop & Tablet
+        height: 36px; // 48px for Desktop & Tablet
+        border-radius: 50%;
+        overflow: hidden;
+        background: colors.$secondary-grey;
+        display: flex;
     }
 }
 
 /* =============== Form =============== */
 .form {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
     width: 100%;
-        
-    &__avatar {
-        width: 18%;
-        align-self: flex-end;
+
+    &__personal-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 100%;
+        padding-bottom: $padding*2;
     }
-    
-    &__img {
-        height: 100%;
-        width: auto;
-        
-        &-container {
-            width: 36px; // 48px for Desktop & Tablet
-            height: 36px; // 48px for Desktop & Tablet
-            border-radius: 50%;
-            overflow: hidden;
-            background: colors.$secondary-grey;
-            display: flex;
-        }
+
+    &__avatar {
+        display: flex;
+        width: 18%;
     }
 
     &__name {
@@ -422,10 +440,17 @@ body {
         width: 82%;
     }
 
-    &__text {
+    &__container {
         display: flex;
         flex-direction: column;
         width: 82%;
+    }
+
+    &__comment {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-bottom: $padding*2;
     }
 
     &__label {
@@ -434,18 +459,42 @@ body {
         margin-bottom: $padding/2;
     }
 
-    &__input {
+    &__text {
         @include body-copy-mobile;
-        font-family: "Avenir", sans-serif;
-        padding: $padding*1.5; // $padding*2 for Desktop
-        border-radius: 4px;
-        border: 1px solid colors.$secondary-grey;
-        background: colors.$secondary-white;
+        @include form-input;
+        height: 36px;
 
-        &:active { // doesn't work
+        &::placeholder {
+            color: colors.$primary-black;
+        }
+
+        &:focus {
+            outline: none;
             border: 1px solid colors.$primary-black;
         }
 
+        &:invalid {
+            border: 1px solid colors.$error-red;
+        }
+    }
+
+    &__textarea {
+        @include body-copy-mobile;
+        @include form-input;
+        height: 100px;
+
+        &::placeholder {
+            color: colors.$primary-black;
+        }
+        
+        &:focus {
+            outline: none;
+            border: 1px solid colors.$primary-black;
+        }
+
+        &:invalid {
+            border: 1px solid colors.$error-red;
+        }
     }
 
     &__btn {

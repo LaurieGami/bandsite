@@ -110,26 +110,28 @@
                 <section class="article__content">
                     <section class="comments">
                         <section class="comments__form">
-                            <form action="URL" method="POST" class="form">
-                                <div class="form__avatar">
-                                    <div class="form__img-container">
-                                        <!-- <input type="file" accept="image/*" id="avatar" name="avatar" class="form__img"> -->
-                                        <img src="./assets/images/Mohan-muruge.jpg" class="form__img">
+                            <form id="commentForm" class="form" novalidate>
+                                <div class="form__personal-info">
+                                    <div class="form__avatar">
+                                        <div class="avatar-container">
+                                            <img src="./assets/images/Mohan-muruge.jpg" class="avatar">
+                                        </div>
+                                    </div>
+                                    <div class="form__name">
+                                        <label for="name" class="form__label">Name</label>
+                                        <input type="text" id="name" name="name" class="form__text" placeholder="Enter your name" autofocus>
                                     </div>
                                 </div>
-                                <div class="form__name">
-                                    <label for="name" class="form__label">Name</label>
-                                    <input type="text" id="name" name="name" class="form__input">
+                                <div class="form__container">
+                                    <div class="form__comment">
+                                        <label for="comment" class="form__label">Comment</label>
+                                        <textarea id="comment" name="comment" class="form__textarea" placeholder="Add a new comment"></textarea>
+                                    </div>
+                                    <button type="submit" id="comment-btn" class="form__btn">Comment</button>
                                 </div>
-                                <div class="form__text">
-                                    <label for="comments" class="form__label">Comment</label>
-                                    <textarea id="comment" name="comments" class="form__input">Add a new comment</textarea>
-                                </div>
-                    
-                                <button type="submit" id="comments__btn" class="form__btn">Comment</button>
                             </form>
                         </section>
-                        <section class="comments__container">
+                        <section id="comment-container" class="comments__container">
                             <!-- This is where the comments will appear -->
                         </section>
                     </section>
