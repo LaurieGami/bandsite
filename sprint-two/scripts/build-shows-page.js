@@ -78,7 +78,8 @@ const createConcertItem = (showArray) => {
 
     button.addEventListener('click', (event) => {
         event.preventDefault();
-        window.open(`${showArray.link}`, '_blank');
+        console.log(`${showArray.location}`);
+        // window.open(`${showArray.link}`, '_blank');
     });
 
     let buttonContainer = makeElement('div', "show__button-container");
@@ -89,6 +90,7 @@ const createConcertItem = (showArray) => {
     return item;
 }
 
+// Display shows in the Shows Container
 const displayConcert = (showArray) => {
     // Select the container to add the show information to
     let showContainer = document.querySelector('.shows__container');
@@ -111,18 +113,19 @@ const displayConcert = (showArray) => {
 
     showContainer.appendChild(listHeadingContainer);
 
-    // Create the list container and show items
+    // Create the list for show items
     let list = document.createElement('ul');
     list.classList.add('shows__list');
 
+    // Create each show items and add them to the list
     for (let i = 0; i < showArray.length; i++) {
         let listItem = createConcertItem(showArray[i]);
         list.appendChild(listItem);
     }
 
+    // Append the list to the Shows Container on our html file
     showContainer.appendChild(list);
-
-    return list;
 }
 
+// Display the shows in the array when first loading the page
 displayConcert(concerts);

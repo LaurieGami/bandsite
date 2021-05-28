@@ -29,9 +29,9 @@ const createAvatar = () => {
     // Create the container for avatar
     let avatarContainer = makeElement('div', 'avatar-container');
 
-    // Create the avatar
+    // Create the avatar img
     let avatar = makeElement('img', 'avatar');
-    avatar.setAttribute('src', '');
+    // avatar.setAttribute('src', '');
 
     // Add avatar to avatar container
     avatarContainer.appendChild(avatar);
@@ -72,6 +72,7 @@ const createCommentItem = (commentArray) => {
     return item;
 }
 
+// Display comments in the Comment Container
 const displayComment = (commentArray) => {
     // Target the container of the comments
     const comments = document.getElementById('comment-container');
@@ -111,5 +112,8 @@ const constrolSubmit = (event) => {
     commentForm.reset();
 }
 
+// Add an event listener to the form
 commentForm.addEventListener('submit', constrolSubmit);
+
+// Display the comments in the array when first loading the page
 displayComment(comments);
