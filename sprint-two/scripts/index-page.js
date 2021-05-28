@@ -40,7 +40,7 @@ const createAvatar = () => {
 }
 
 // Create a card for each comment
-const createCommentItems = (commentArray) => {
+const createCommentItem = (commentArray) => {
     // Create the container of the card
     let item = makeElement('article', 'comment');
 
@@ -81,7 +81,7 @@ const displayComment = (commentArray) => {
 
     // Go through all the comments in the array and add it to the container
     for (let i = 0; i < commentArray.length; i++) {
-        let card = createCommentItems(commentArray[i]);
+        let card = createCommentItem(commentArray[i]);
         comments.appendChild(card);
     }
 }
@@ -91,13 +91,13 @@ const constrolSubmit = (event) => {
     // Prevent the page from reloading at submit event
     event.preventDefault();
 
+    // Get today's date
     let today = new Date();
-    // let date = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear();
 
     // Create a new comment object with the form inputs as data
     let data = {
         name: event.target.name.value,
-        timeStamp: (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear(),
+        timeStamp: (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear(), // Format today's date mm/dd/yyyy
         text: event.target.comment.value
     }
 
