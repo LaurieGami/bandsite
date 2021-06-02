@@ -94,6 +94,43 @@ const createCommentItem = (commentArray) => {
     text.innerText = commentArray.comment;
     rightSide.appendChild(text);
 
+    // Create the buttons container of the card
+    let buttonContainer = makeElement('div', 'comment__button-container');
+
+    // Create the like button of the card
+    let like = makeElement('button', 'comment__like');
+    like.innerText = `Likes: ${commentArray.likes}`;
+
+    like.addEventListener('click', (event) => {
+        event.preventDefault();
+        axios.put(`${BASE_URL}comments/${commentArray.id}/like?api_key=${API_KEY}`)
+        .then(result => {
+            console.log(result);
+            getComments();
+        })
+        .catch(error => console.log(error))
+    });
+
+    buttonContainer.appendChild(like);
+
+    // Create the delete button of the card
+    let remove = makeElement('button', 'comment__remove');
+    remove.innerText = `Delete`;
+
+    remove.addEventListener('click', (event) => {
+        event.preventDefault();
+        axios.delete(`${BASE_URL}comments/${commentArray.id}?api_key=${API_KEY}`)
+        .then(result => {
+            console.log(result);
+            getComments();
+        })
+        .catch(error => console.log(error))
+    });
+
+    buttonContainer.appendChild(remove);
+
+    rightSide.appendChild(buttonContainer);
+
     item.appendChild(leftSide);
     item.appendChild(rightSide);
 

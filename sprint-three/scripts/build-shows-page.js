@@ -47,7 +47,7 @@ const createConcertItem = (showArray) => {
 
     button.addEventListener('click', (event) => {
         event.preventDefault();
-        console.log(showArray.location);
+        console.log(showArray.place);
     });
 
     let buttonContainer = makeElement('div', "show__button-container");
