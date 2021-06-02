@@ -100,12 +100,14 @@ const createCommentItem = (commentArray) => {
     return item;
 }
 
-// Display comments in the Comment Container
-const displayComment = (commentArray) => {
-    // Target the container of the comments
-    const commentsContainer = document.getElementById('comment-container');
+// Target the comment form
+const commentForm = document.getElementById('comment-form');
+// Target the container of the comments
+const commentsContainer = document.getElementById('comment-container');
 
-    // Empty the comments' container prior to display it
+// Display comments in the Comments Container
+const displayComment = (commentArray) => {
+    // Empty the Comments Container prior to display it
     commentsContainer.innerHTML = '';
 
     // Sort the array of comments by date posted
@@ -113,11 +115,19 @@ const displayComment = (commentArray) => {
         return b.timestamp - a.timestamp;
     });
 
-    // Go through all the comments in the array and add it to the container
-    for (let i = 0; i < commentArray.length; i++) {
-        let card = createCommentItem(commentArray[i]);
+    // Go through and create a card for all the comments in the array and add it to the container
+    commentArray.forEach(comment => {
+        let card = createCommentItem(comment);
         commentsContainer.appendChild(card);
-    }
+    })
+}
+
+// Function to retrieve the comments
+const getComments = () => {
+    axios
+        .get(`${BASE_URL}comments/?api_key=${API_KEY}`)
+        .then(result => displayComment(result.data))
+        .catch(error => console.log(error))
 }
 
 // Control the submit event of our form
@@ -132,12 +142,10 @@ const constrolSubmit = (event) => {
     })
     .then(result => {
         // Log the new comment on the console
-        console.log(result);
-        // Get all the comments (including the new one) from the API
-        return axios.get(`${BASE_URL}comments/?api_key=${API_KEY}`);
+        console.log(result.data);
+        // Retrieve all the comments (including the new one)
+        getComments();
     })
-    // Display all the comments (including the new one) on the page
-    .then(result => displayComment(result.data))
     .catch(error => console.log(error))
 
     // Reset the form inputs
@@ -148,6 +156,4 @@ const constrolSubmit = (event) => {
 commentForm.addEventListener('submit', constrolSubmit);
 
 // Display the comments in the array when first loading the page
-axios.get(`${BASE_URL}comments/?api_key=${API_KEY}`)
-.then(result => displayComment(result.data))
-.catch(error => console.log(error))
+getComments();

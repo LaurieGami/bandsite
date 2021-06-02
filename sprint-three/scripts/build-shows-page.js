@@ -86,10 +86,10 @@ const displayConcert = (showArray) => {
     list.classList.add('shows__list');
 
     // Create each show items and add them to the list
-    for (let i = 0; i < showArray.length; i++) {
-        let listItem = createConcertItem(showArray[i]);
+    showArray.forEach(showdate => {
+        let listItem = createConcertItem(showdate);
         list.appendChild(listItem);
-    }
+    })
 
     // Append the list to the Shows Container on our html file
     showContainer.appendChild(list);
