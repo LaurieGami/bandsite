@@ -98,14 +98,21 @@ const createCommentItem = (commentArray) => {
     let buttonContainer = makeElement('div', 'comment__button-container');
 
     // Create the like button of the card
-    let like = makeElement('button', 'comment__like');
-    like.innerText = `Likes: ${commentArray.likes}`;
+    let like = makeElement('div', 'comment__like');
+
+    let likeBtn = makeElement('img', 'comment__like-img');
+    likeBtn.src= "../assets/icons/SVG/icon-like.svg";
+    like.appendChild(likeBtn);
+
+    let likeCount = makeElement('div', 'comment__like-count');
+    likeCount.innerText = commentArray.likes;
+    like.appendChild(likeCount);
 
     like.addEventListener('click', (event) => {
         event.preventDefault();
         axios.put(`${BASE_URL}comments/${commentArray.id}/like?api_key=${API_KEY}`)
         .then(result => {
-            console.log(result);
+            console.log(result.data);
             getComments();
         })
         .catch(error => console.log(error))
@@ -114,20 +121,20 @@ const createCommentItem = (commentArray) => {
     buttonContainer.appendChild(like);
 
     // Create the delete button of the card
-    let remove = makeElement('button', 'comment__remove');
-    remove.innerText = `Delete`;
+    let removeBtn = makeElement('img', 'comment__remove');
+    removeBtn.src= "../assets/icons/SVG/icon-delete.svg";
 
-    remove.addEventListener('click', (event) => {
+    removeBtn.addEventListener('click', (event) => {
         event.preventDefault();
         axios.delete(`${BASE_URL}comments/${commentArray.id}?api_key=${API_KEY}`)
         .then(result => {
-            console.log(result);
+            console.log(result.data);
             getComments();
         })
         .catch(error => console.log(error))
     });
 
-    buttonContainer.appendChild(remove);
+    buttonContainer.appendChild(removeBtn);
 
     rightSide.appendChild(buttonContainer);
 
@@ -147,8 +154,8 @@ const displayComment = (commentArray) => {
     // Empty the Comments Container prior to display it
     commentsContainer.innerHTML = '';
 
-    // Sort the array of comments by date posted
-    commentArray.sort(function(a, b) {
+    // Sort the array of comments by date posted, with the latest at the top
+    commentArray.sort((a, b) => {
         return b.timestamp - a.timestamp;
     });
 

@@ -446,19 +446,22 @@ body {
         width: 100%;
     }
 
-    &__like, &__remove {
-        @include label-button-mobile;
+    &__like {
+        @include body-copy-mobile;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        background: colors.$primary-black;
-        color: colors.$primary-white;
-        border-style: none;
-        border-radius: 4px;
+        cursor: pointer;
 
         @media (min-width: 768px) {
-            @include label-button-desktop;
+            @include body-copy-desktop;
         }
+
+        &-img {
+            padding-right: $padding;
+        }
+    }
+
+    &__remove {
+        cursor: pointer;
     }
 }
 

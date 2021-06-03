@@ -506,26 +506,25 @@ body {
   justify-content: space-between;
   width: 100%;
 }
-.comment__like, .comment__remove {
-  font-size: 10px;
-  line-height: 20px;
-  font-weight: 700;
-  text-transform: uppercase;
+.comment__like {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #323232;
-  color: #FFFFFF;
-  border-style: none;
-  border-radius: 4px;
+  cursor: pointer;
 }
 @media (min-width: 768px) {
-  .comment__like, .comment__remove {
-    font-size: 12px;
-    line-height: 20px;
-    font-weight: 700;
-    text-transform: uppercase;
+  .comment__like {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
   }
+}
+.comment__like-img {
+  padding-right: 8px;
+}
+.comment__remove {
+  cursor: pointer;
 }
 
 /* =============== Avatar =============== */
