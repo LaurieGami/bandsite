@@ -8,7 +8,7 @@ const makeElement = (element, className) => {
     return anElement;
 }
 
-// Transform timestamp in a date format Weekday Mon DD YYYY
+// Transform timestamp in a date format: DDD MMM DD YYYY
 const timestampToDate = (timestamp) => {
     let date = new Date(Number(timestamp));
     return date.toDateString();
@@ -96,6 +96,10 @@ const displayConcert = (showArray) => {
 }
 
 // Display the shows in the array when first loading the page
-axios.get(`${BASE_URL}showdates/?api_key=${API_KEY}`)
-.then(result => displayConcert(result.data))
-.catch(error => console.log(error))
+const getShows = () => {
+    axios.get(`${BASE_URL}showdates/?api_key=${API_KEY}`)
+    .then(result => displayConcert(result.data))
+    .catch(error => console.log(error))
+}
+
+getShows();

@@ -17,7 +17,7 @@ const createAvatar = () => {
     let avatar = makeElement('img', 'avatar');
     // avatar.setAttribute('src', '');
 
-    // Add avatar to avatar container
+    // Add avatar img to avatar container
     avatarContainer.appendChild(avatar);
 
     return avatarContainer;
@@ -166,7 +166,7 @@ const displayComment = (commentArray) => {
     })
 }
 
-// Function to retrieve the comments
+// Function to retrieve the comments from the URL
 const getComments = () => {
     axios
         .get(`${BASE_URL}comments/?api_key=${API_KEY}`)
